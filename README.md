@@ -44,3 +44,9 @@ sudo dnf install \
 ```
 sudo dnf upgrade --refresh
 ```
+
+### 4) Disable unneeded services on startup:
+```
+sudo systemctl disable NetworkManager-wait-online.service
+sudo rm /etc/xdg/autostart/org.gnome.Software.desktop
+```
