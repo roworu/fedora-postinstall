@@ -50,3 +50,17 @@ sudo dnf upgrade --refresh
 sudo systemctl disable NetworkManager-wait-online.service
 sudo rm /etc/xdg/autostart/org.gnome.Software.desktop
 ```
+
+### 5) Install codecs:
+
+```
+sudo dnf swap ffmpeg-free ffmpeg --allowerasing
+sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
+sudo dnf update @sound-and-video
+```
+
+### 6) Nvidia hardware acceleration codecs:
+
+```
+sudo dnf install libva-nvidia-driver.{i686,x86_64}
+```
