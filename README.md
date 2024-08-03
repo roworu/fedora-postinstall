@@ -58,7 +58,6 @@ sudo rm /etc/xdg/autostart/org.kde.discover.notifier.desktop
 ```
 sudo dnf swap ffmpeg-free ffmpeg --allowerasing
 sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
-sudo dnf update @sound-and-video
 ```
 
 ### 6) Nvidia hardware acceleration codecs:
