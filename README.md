@@ -59,8 +59,6 @@ sudo dnf install xorg-x11-drv-nvidia-cuda
 ### 5) Disable unneeded services on startup:
 ```
 sudo systemctl disable NetworkManager-wait-online.service
-sudo rm /etc/xdg/autostart/org.gnome.Software.desktop
-## For plasma:
 sudo rm /etc/xdg/autostart/org.kde.discover.notifier.desktop
 ```
 
