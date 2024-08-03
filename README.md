@@ -49,6 +49,8 @@ sudo dnf upgrade --refresh
 ```
 sudo systemctl disable NetworkManager-wait-online.service
 sudo rm /etc/xdg/autostart/org.gnome.Software.desktop
+## For plasma:
+sudo rm /etc/xdg/autostart/org.kde.discover.notifier.desktop
 ```
 
 ### 5) Install codecs:
