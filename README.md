@@ -45,7 +45,18 @@ sudo dnf install \
 sudo dnf upgrade --refresh
 ```
 
-### 4) Disable unneeded services on startup:
+### 4) Nvidia drivers:
+
+```
+sudo dnf install akmod-nvidia xorg-x11-drv-nvidia xorg-x11-drv-nvidia-libs.{i686,x86_64}
+
+# For hwaccel:
+sudo dnf install libva-nvidia-driver.{i686,x86_64}
+# For CUDA:
+sudo dnf install xorg-x11-drv-nvidia-cuda 
+```
+
+### 5) Disable unneeded services on startup:
 ```
 sudo systemctl disable NetworkManager-wait-online.service
 sudo rm /etc/xdg/autostart/org.gnome.Software.desktop
@@ -53,15 +64,9 @@ sudo rm /etc/xdg/autostart/org.gnome.Software.desktop
 sudo rm /etc/xdg/autostart/org.kde.discover.notifier.desktop
 ```
 
-### 5) Install codecs:
+### 6) Install codecs:
 
 ```
 sudo dnf swap ffmpeg-free ffmpeg --allowerasing
 sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
-```
-
-### 6) Nvidia hardware acceleration codecs:
-
-```
-sudo dnf install libva-nvidia-driver.{i686,x86_64}
 ```
