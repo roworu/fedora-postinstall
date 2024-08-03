@@ -70,3 +70,20 @@ sudo rm /etc/xdg/autostart/org.kde.discover.notifier.desktop
 sudo dnf swap ffmpeg-free ffmpeg --allowerasing
 sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
 ```
+
+### 7) Remove some of preinstalled applications
+
+```
+# libreoffice
+sudo dnf group remove libreoffice
+sudo dnf remove libreoffice-core
+
+# kde games
+sudo dnf remove kmahjongg kmines kpat
+
+# emails + akregator + neochat
+sudo dnf remove akregator kmail headerthemeeditor ktn neochat pimdataexporter sieveeditor
+
+# media apps
+sudo dnf remove dragon elisa-player kamoso
+```
