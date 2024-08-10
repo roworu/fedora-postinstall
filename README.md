@@ -80,7 +80,7 @@ sudo dnf remove libreoffice-core
 sudo dnf remove kmahjongg kmines kpat
 
 # emails + akregator + neochat
-sudo dnf remove akregator kmail headerthemeeditor ktn neochat pimdataexporter sieveeditor
+sudo dnf remove akregator kmail headerthemeeditor ktn neochat pimdataexporter sieveeditor kmousetool kmouth im-chooser korganizer kaddressbook
 
 # media apps
 sudo dnf remove dragon elisa-player kamoso
