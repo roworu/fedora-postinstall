@@ -73,13 +73,12 @@ sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=Package
 
 ```
 # libreoffice
-sudo dnf group remove libreoffice
-sudo dnf remove libreoffice-core
+sudo dnf group remove libreoffice && sudo dnf remove libreoffice-core
 
 # kde games
 sudo dnf remove kmahjongg kmines kpat
 
-# emails + akregator + neochat
+# kmail + akregator + neochat + korganizer + accesibility apps
 sudo dnf remove akregator kmail headerthemeeditor ktn neochat pimdataexporter sieveeditor kmousetool kmouth im-chooser korganizer kaddressbook
 
 # media apps
