@@ -82,5 +82,5 @@ sudo dnf remove kmahjongg kmines kpat
 sudo dnf remove akregator kmail headerthemeeditor ktn neochat pimdataexporter sieveeditor kmousetool kmouth im-chooser korganizer kaddressbook
 
 # media apps
-sudo dnf remove dragon elisa-player kamoso
+sudo dnf remove dragon elisa-player kamoso kolourpaint skanpage
 ```
