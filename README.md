@@ -84,7 +84,7 @@ sudo dnf group remove libreoffice && sudo dnf remove libreoffice-core
 sudo dnf remove kmahjongg kmines kpat
 
 # kmail + akregator + neochat + korganizer + accesibility apps
-sudo dnf remove akregator kmail headerthemeeditor ktn neochat pimdataexporter sieveeditor kmousetool kmouth im-chooser korganizer kaddressbook
+sudo dnf remove akregator kmail headerthemeeditor ktn neochat pimdataexporter sieveeditor kmousetool kmouth im-chooser korganizer kaddressbook khelpcenter
 
 # media apps
 sudo dnf remove dragon elisa-player kamoso kolourpaint skanpage
