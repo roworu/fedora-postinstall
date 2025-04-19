@@ -13,12 +13,6 @@ Specify options based on your preferences:
 
 # Default config options:
 [main]
-gpgcheck=True
-installonly_limit=3
-clean_requirements_on_remove=True
-best=False
-skip_if_unavailable=True
-# Optional changes:
 max_parallel_downloads=5 
 defaultyes=True          
 ```
@@ -48,15 +42,9 @@ sudo dnf upgrade --refresh
 ### 4) Nvidia drivers:
 
 ```
-sudo dnf install akmod-nvidia xorg-x11-drv-nvidia xorg-x11-drv-nvidia-libs.{i686,x86_64}
+sudo dnf install akmod-nvidia xorg-x11-drv-nvidia xorg-x11-drv-nvidia-libs.{i686,x86_64} libva-nvidia-driver.{i686,x86_64} xorg-x11-drv-nvidia-cuda
 
-# For hwaccel:
-sudo dnf install libva-nvidia-driver.{i686,x86_64}
-# For CUDA:
-sudo dnf install xorg-x11-drv-nvidia-cuda
-
-
-# For latest drivers (555-560) + wayland you might want to also disable GSP Firmware
+# For latest drivers (555-570) + wayland you might want to also disable GSP Firmware
 # source: https://forums.developer.nvidia.com/t/major-kde-plasma-desktop-frameskip-lag-issues-on-driver-555/293606
 sudo grubby --update-kernel=ALL --args=nvidia.NVreg_EnableGpuFirmware=0
 ```
@@ -64,28 +52,21 @@ sudo grubby --update-kernel=ALL --args=nvidia.NVreg_EnableGpuFirmware=0
 ### 5) Disable unneeded services on startup:
 ```
 sudo systemctl disable NetworkManager-wait-online.service
-sudo rm /etc/xdg/autostart/org.kde.discover.notifier.desktop
+sudo rm /etc/xdg/autostart/org.kde.discover.notifier.desktop /etc/xdg/autostart/vmware-user.desktop /etc/xdg/autostart/vboxclient.desktop /etc/xdg/autostart/spice-vdagent.desktop
 ```
 
 ### 6) Install codecs:
 
 ```
 sudo dnf swap ffmpeg-free ffmpeg --allowerasing
-sudo dnf update @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
 ```
 
-### 7) Remove some of preinstalled applications
+### 7) Remove preinstalled applications
 
 ```
-# libreoffice
-sudo dnf group remove libreoffice && sudo dnf remove libreoffice-core
-
-# kde games
-sudo dnf remove kmahjongg kmines kpat
-
-# kmail + akregator + neochat + korganizer + accesibility apps
-sudo dnf remove akregator kmail headerthemeeditor ktn neochat pimdataexporter sieveeditor kmousetool kmouth im-chooser korganizer kaddressbook khelpcenter
-
-# media apps
-sudo dnf remove dragon elisa-player kamoso kolourpaint skanpage
+sudo dnf group remove libreoffice && sudo dnf remove libreoffice-core \
+ kmahjongg kmines kpat \
+ akregator kmail headerthemeeditor ktn neochat pimdataexporter sieveeditor kmousetool kmouth im-chooser korganizer kaddressbook khelpcenter \
+ dragon elisa-player kamoso kolourpaint skanpage \
+ 
 ```
