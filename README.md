@@ -10,7 +10,7 @@ Specify options based on your preferences:
 
 ```
 # see `man dnf.conf` for defaults and possible options
-
+k3b
 # Default config options:
 [main]
 max_parallel_downloads=5 
@@ -67,6 +67,6 @@ sudo dnf swap ffmpeg-free ffmpeg --allowerasing
 sudo dnf group remove libreoffice && sudo dnf remove libreoffice-core \
  kmahjongg kmines kpat \
  akregator kmail headerthemeeditor ktn neochat pimdataexporter sieveeditor kmousetool kmouth im-chooser korganizer kaddressbook khelpcenter \
- dragon elisa-player kamoso kolourpaint skanpage \
+ dragon elisa-player kamoso kolourpaint skanpage k3b gcdmaster qrca ktorrent kdeconnect nwg-panel mediawriter krusader digikam showfoto uuctl
  
 ```
