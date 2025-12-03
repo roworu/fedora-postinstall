@@ -17,17 +17,17 @@ max_parallel_downloads=5
 defaultyes=True          
 ```
 Explanation:
-- `max_parallel_downloads=5`  change amount of parallel donwloads to 5 
+- `max_parallel_downloads=5`  change amount of parallel downloads to 5 
 - `defaultyes=True`          make "Yes" default answer for dnf actions 
 
 ### 2) Install rpmfusion repos:
 
-free:
+Free:
 ```
 sudo dnf install \
   https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
 ```
-nonfree:
+Non-free:
 ```
 sudo dnf install \
   https://download1.rpmfusion.org/nonfree/fedora/rpmfusion-nonfree-release-$(rpm -E %fedora).noarch.rpm
