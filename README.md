@@ -57,8 +57,12 @@ sudo rm /etc/xdg/autostart/org.kde.discover.notifier.desktop /etc/xdg/autostart/
 
 ### 6) Install codecs:
 
-```
+```bash
 sudo dnf swap ffmpeg-free ffmpeg --allowerasing
+```
+
+```bash
+sudo dnf install -y libheif-freeworld qt-heif-image-plugin
 ```
 
 ### 7) Remove preinstalled applications
