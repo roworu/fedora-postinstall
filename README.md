@@ -9,15 +9,12 @@ In this file:
 Specify options based on your preferences:
 
 ```
-# see `man dnf.conf` for defaults and possible options
-k3b
-# Default config options:
 [main]
-max_parallel_downloads=5 
-defaultyes=True          
+max_parallel_downloads=5
+defaultyes=True        
 ```
 Explanation:
-- `max_parallel_downloads=5`  change amount of parallel donwloads to 5 
+- `max_parallel_downloads=5`  change amount of parallel downloads to 5 
 - `defaultyes=True`          make "Yes" default answer for dnf actions 
 
 ### 2) Install rpmfusion repos:
