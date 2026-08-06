@@ -50,27 +50,27 @@ sudo grubby --update-kernel=ALL --args=nvidia.NVreg_EnableGpuFirmware=0
 ```
 
 ### 5) Disable unneeded services on startup:
+Discover update notifications, waiting for network and others:
 ```
 sudo systemctl disable NetworkManager-wait-online.service
 sudo rm /etc/xdg/autostart/org.kde.discover.notifier.desktop /etc/xdg/autostart/vmware-user.desktop /etc/xdg/autostart/vboxclient.desktop /etc/xdg/autostart/spice-vdagent.desktop
 ```
 
 ### 6) Install codecs:
-
+More info here: https://rpmfusion.org/Howto/Multimedia
 ```bash
 sudo dnf swap ffmpeg-free ffmpeg --allowerasing
-```
-
-```bash
 sudo dnf install -y libheif-freeworld qt-heif-image-plugin
+sudo dnf install @multimedia --setopt="install_weak_deps=False" --exclude=PackageKit-gstreamer-plugin
 ```
 
 ### 7) Remove preinstalled applications
-
+Minimize KDE session:
 ```
 sudo dnf group remove libreoffice && sudo dnf remove libreoffice-core \
  kmahjongg kmines kpat \
  akregator kmail headerthemeeditor ktn neochat pimdataexporter sieveeditor kmousetool kmouth im-chooser korganizer kaddressbook khelpcenter \
- dragon elisa-player kamoso kolourpaint skanpage k3b gcdmaster qrca ktorrent kdeconnect nwg-panel mediawriter krusader digikam showfoto uuctl
+ dragon elisa-player kamoso kolourpaint skanpage k3b gcdmaster qrca ktorrent kdeconnect nwg-panel mediawriter krusader digikam showfoto uuctl \
+ kleopatra kcharselect kde-connect plasma-welcome kdebugsettings kjournald gnome-abrt kfind 
  
 ```
